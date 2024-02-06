@@ -1,0 +1,15 @@
+# 基础镜像
+FROM  openjdk:8-jre
+# author
+MAINTAINER auths
+
+# 挂载目录
+VOLUME /home/auths
+# 创建目录
+RUN mkdir -p /home/auths
+# 指定路径
+WORKDIR /home/auths
+# 复制jar文件到路径
+COPY ./jar/auths-modules-job.jar /home/auths/auths-modules-job.jar
+# 启动定时任务服务
+ENTRYPOINT ["java","-jar","auths-modules-job.jar"]

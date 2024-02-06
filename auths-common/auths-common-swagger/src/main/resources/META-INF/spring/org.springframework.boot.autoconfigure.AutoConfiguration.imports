@@ -1,0 +1,3 @@
+# com.auths.common.swagger.config.SwaggerAutoConfiguration
+# com.auths.common.swagger.config.SwaggerWebConfiguration
+# com.auths.common.swagger.config.SwaggerBeanPostProcessor

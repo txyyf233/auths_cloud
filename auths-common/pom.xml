@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.auths</groupId>
+        <artifactId>auths</artifactId>
+        <version>0.9.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>auths-common-log</module>
+        <module>auths-common-core</module>
+        <module>auths-common-redis</module>
+        <module>auths-common-seata</module>
+        <module>auths-common-swagger</module>
+        <module>auths-common-security</module>
+        <module>auths-common-datascope</module>
+        <module>auths-common-datasource</module>
+    </modules>
+
+    <artifactId>auths-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        auths-common通用模块
+    </description>
+
+</project>

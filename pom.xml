@@ -4,30 +4,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi</artifactId>
-    <version>3.6.3</version>
+    <groupId>com.auths</groupId>
+    <artifactId>auths</artifactId>
+    <version>0.9.0</version>
 
-    <name>ruoyi</name>
-    <url>http://www.ruoyi.vip</url>
-    <description>若依微服务系统</description>
+    <name>auths</name>
+    <url>http://www.auths.vip</url>
+    <description>微服务系统</description>
 
     <properties>
-        <ruoyi.version>3.6.3</ruoyi.version>
+        <auths.version>0.9.0</auths.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring-boot.version>2.7.13</spring-boot.version>
-        <spring-cloud.version>2021.0.8</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
-        <spring-boot-admin.version>2.7.10</spring-boot-admin.version>
-        <swagger.fox.version>3.0.0</swagger.fox.version>
-        <swagger.core.version>1.6.2</swagger.core.version>
-        <tobato.version>1.27.2</tobato.version>
+        <java.version>21</java.version>
+        <spring-boot.version>3.0.13</spring-boot.version>
+        <mybatis-spring.version>3.0.3</mybatis-spring.version>
+        <spring-cloud.version>2022.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
+        <spring-boot-admin.version>3.0.4</spring-boot-admin.version>
+        <springdoc.version>2.3.0</springdoc.version>
+<!--        <tobato.version>1.27.2</tobato.version>-->
         <kaptcha.version>2.3.3</kaptcha.version>
         <pagehelper.boot.version>1.4.7</pagehelper.boot.version>
-        <druid.version>1.2.16</druid.version>
-        <dynamic-ds.version>3.5.2</dynamic-ds.version>
+        <druid.version>1.2.21</druid.version>
+        <dynamic-ds.version>4.3.0</dynamic-ds.version>
         <commons.io.version>2.11.0</commons.io.version>
         <velocity.version>2.3</velocity.version>
         <fastjson.version>2.0.34</fastjson.version>
@@ -68,23 +68,24 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- FastDFS 分布式文件系统 -->
             <dependency>
-                <groupId>com.github.tobato</groupId>
-                <artifactId>fastdfs-client</artifactId>
-                <version>${tobato.version}</version>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring.version}</version>
             </dependency>
+
+            <!-- FastDFS 分布式文件系统 -->
+<!--            <dependency>-->
+<!--                <groupId>com.github.tobato</groupId>-->
+<!--                <artifactId>fastdfs-client</artifactId>-->
+<!--                <version>${tobato.version}</version>-->
+<!--            </dependency>-->
 
             <!-- Swagger 依赖配置 -->
             <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-models</artifactId>
-                <version>${swagger.core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger.core.version}</version>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
             </dependency>
 
             <!-- 验证码 -->
@@ -145,77 +146,77 @@
 
             <!-- 核心模块 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-core</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-core</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 接口模块 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-swagger</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-swagger</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 安全模块 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-security</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-security</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 权限范围 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-datascope</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-datascope</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 多数据源 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-datasource</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-datasource</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 分布式事务 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-seata</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-seata</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 日志记录 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-log</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-log</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 缓存服务 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common-redis</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-common-redis</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
             <!-- 系统接口 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-api-system</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.auths</groupId>
+                <artifactId>auths-api-system</artifactId>
+                <version>${auths.version}</version>
             </dependency>
 
         </dependencies>
     </dependencyManagement>
 
     <modules>
-        <module>ruoyi-auth</module>
-        <module>ruoyi-gateway</module>
-        <module>ruoyi-visual</module>
-        <module>ruoyi-modules</module>
-        <module>ruoyi-api</module>
-        <module>ruoyi-common</module>
+        <module>auths-auth</module>
+        <module>auths-gateway</module>
+        <module>auths-visual</module>
+        <module>auths-modules</module>
+        <module>auths-api</module>
+        <module>auths-common</module>
     </modules>
     <packaging>pom</packaging>
 

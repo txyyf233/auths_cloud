@@ -14,28 +14,28 @@ cp ../sql/ry_config_20220929.sql ./mysql/db
 
 # copy html
 echo "begin copy html "
-cp -r ../ruoyi-ui/dist/** ./nginx/html/dist
+cp -r ../auths-ui/dist/** ./nginx/html/dist
 
 
 # copy jar
-echo "begin copy ruoyi-gateway "
-cp ../ruoyi-gateway/target/ruoyi-gateway.jar ./ruoyi/gateway/jar
+echo "begin copy auths-gateway "
+cp ../auths-gateway/target/auths-gateway.jar ./auths/gateway/jar
 
-echo "begin copy ruoyi-auth "
-cp ../ruoyi-auth/target/ruoyi-auth.jar ./ruoyi/auth/jar
+echo "begin copy auths-auth "
+cp ../auths-auth/target/auths-auth.jar ./auths/auth/jar
 
-echo "begin copy ruoyi-visual "
-cp ../ruoyi-visual/ruoyi-monitor/target/ruoyi-visual-monitor.jar  ./ruoyi/visual/monitor/jar
+echo "begin copy auths-visual "
+cp ../auths-visual/auths-monitor/target/auths-visual-monitor.jar  ./auths/visual/monitor/jar
 
-echo "begin copy ruoyi-modules-system "
-cp ../ruoyi-modules/ruoyi-system/target/ruoyi-modules-system.jar ./ruoyi/modules/system/jar
+echo "begin copy auths-modules-system "
+cp ../auths-modules/auths-system/target/auths-modules-system.jar ./auths/modules/system/jar
 
-echo "begin copy ruoyi-modules-file "
-cp ../ruoyi-modules/ruoyi-file/target/ruoyi-modules-file.jar ./ruoyi/modules/file/jar
+echo "begin copy auths-modules-file "
+cp ../auths-modules/auths-file/target/auths-modules-file.jar ./auths/modules/file/jar
 
-echo "begin copy ruoyi-modules-job "
-cp ../ruoyi-modules/ruoyi-job/target/ruoyi-modules-job.jar ./ruoyi/modules/job/jar
+echo "begin copy auths-modules-job "
+cp ../auths-modules/auths-job/target/auths-modules-job.jar ./auths/modules/job/jar
 
-echo "begin copy ruoyi-modules-gen "
-cp ../ruoyi-modules/ruoyi-gen/target/ruoyi-modules-gen.jar ./ruoyi/modules/gen/jar
+echo "begin copy auths-modules-gen "
+cp ../auths-modules/auths-gen/target/auths-modules-gen.jar ./auths/modules/gen/jar
 

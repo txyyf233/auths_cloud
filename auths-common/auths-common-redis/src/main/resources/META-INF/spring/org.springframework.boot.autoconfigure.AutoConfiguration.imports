@@ -1,0 +1,2 @@
+com.auths.common.redis.configure.RedisConfig
+com.auths.common.redis.service.RedisService
