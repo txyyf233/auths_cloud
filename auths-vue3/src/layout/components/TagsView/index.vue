@@ -212,7 +212,7 @@ function toLastView(visitedViews, view) {
       // to reload home page
       router.replace({ path: '/redirect' + view.fullPath })
     } else {
-      router.push('/')
+      router.push(view.path)
     }
   }
 }
