@@ -69,6 +69,8 @@ import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from "@/utils/jsencrypt";
 import useUserStore from '@/store/modules/user'
+import { findFirstPage } from "@/permission";
+import usePermissionStore from "@/store/modules/permission";
 
 const userStore = useUserStore()
 const router = useRouter();
@@ -113,7 +115,9 @@ function handleLogin() {
       }
       // 调用action的登录方法
       userStore.login(loginForm.value).then(() => {
-        router.push({ path: redirect.value || "/" });
+        usePermissionStore().generateRoutes().then(accessRoutes => {
+          router.push({ path: redirect.value || findFirstPage(accessRoutes)});
+        })
       }).catch(() => {
         loading.value = false;
         // 重新获取验证码

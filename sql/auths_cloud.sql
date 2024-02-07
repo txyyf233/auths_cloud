@@ -885,7 +885,7 @@ CREATE TABLE `sys_user` (
   `user_id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户ID',
   `dept_id` bigint DEFAULT NULL COMMENT '部门ID',
   `user_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT '用户账号',
-  `nick_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT '用户昵称',
+  `nick_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT '真实姓名',
   `user_type` varchar(2) COLLATE utf8mb4_general_ci DEFAULT '00' COMMENT '用户类型（00系统用户）',
   `email` varchar(50) COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '用户邮箱',
   `phonenumber` varchar(11) COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '手机号码',

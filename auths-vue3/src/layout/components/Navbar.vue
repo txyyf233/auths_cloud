@@ -7,20 +7,6 @@
     <div class="right-menu">
       <template v-if="appStore.device !== 'mobile'">
         <header-search id="header-search" class="right-menu-item" />
-
-        <el-tooltip content="源码地址" effect="dark" placement="bottom">
-          <ruo-yi-git id="auths-git" class="right-menu-item hover-effect" />
-        </el-tooltip>
-
-        <el-tooltip content="文档地址" effect="dark" placement="bottom">
-          <ruo-yi-doc id="auths-doc" class="right-menu-item hover-effect" />
-        </el-tooltip>
-
-        <screenfull id="screenfull" class="right-menu-item hover-effect" />
-
-        <el-tooltip content="布局大小" effect="dark" placement="bottom">
-          <size-select id="size-select" class="right-menu-item hover-effect" />
-        </el-tooltip>
       </template>
       <div class="avatar-container">
         <el-dropdown @command="handleCommand" class="right-menu-item hover-effect" trigger="click">
@@ -33,9 +19,6 @@
               <router-link to="/user/profile">
                 <el-dropdown-item>个人中心</el-dropdown-item>
               </router-link>
-              <el-dropdown-item command="setLayout">
-                <span>布局设置</span>
-              </el-dropdown-item>
               <el-dropdown-item divided command="logout">
                 <span>退出登录</span>
               </el-dropdown-item>
@@ -52,11 +35,7 @@ import { ElMessageBox } from 'element-plus'
 import Breadcrumb from '@/components/Breadcrumb'
 import TopNav from '@/components/TopNav'
 import Hamburger from '@/components/Hamburger'
-import Screenfull from '@/components/Screenfull'
-import SizeSelect from '@/components/SizeSelect'
 import HeaderSearch from '@/components/HeaderSearch'
-import AuthsGit from '@/components/Auths/Git'
-import AuthsDoc from '@/components/Auths/Doc'
 import useAppStore from '@/store/modules/app'
 import useUserStore from '@/store/modules/user'
 import useSettingsStore from '@/store/modules/settings'
@@ -71,9 +50,6 @@ function toggleSideBar() {
 
 function handleCommand(command) {
   switch (command) {
-    case "setLayout":
-      setLayout();
-      break;
     case "logout":
       logout();
       break;
@@ -92,11 +68,6 @@ function logout() {
       location.href = '/index';
     })
   }).catch(() => { });
-}
-
-const emits = defineEmits(['setLayout'])
-function setLayout() {
-  emits('setLayout');
 }
 </script>
 

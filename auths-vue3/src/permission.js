@@ -34,7 +34,12 @@ router.beforeEach((to, from, next) => {
                 router.addRoute(route) // 动态添加可访问路由表
               }
             })
-            next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+            if (to.path === '/') {
+              const path = findFirstPage(accessRoutes)
+              next({ path: path})
+            }else{
+              next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+            }
           })
         }).catch(err => {
           useUserStore().logOut().then(() => {
@@ -57,6 +62,27 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+
+export function findFirstPage(accessRoutes) {
+  let path = ''
+  if(accessRoutes instanceof Array && accessRoutes.length > 0){
+    const menu = accessRoutes[0]
+    if(menu.path && menu.path.slice(0, 1) === "/"){
+      path += menu.path
+    }else{
+      path += "/" + menu.path
+    }
+    if(menu.children){
+      path += findFirstPage(menu.children)
+    }
+  }else{
+    path += accessRoutes.path
+  }
+  if(!path){
+    path = "/"
+  }
+  return path
+}
 
 router.afterEach(() => {
   NProgress.done()
