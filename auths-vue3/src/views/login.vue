@@ -31,7 +31,7 @@
           size="large"
           auto-complete="off"
           placeholder="验证码"
-          style="width: 63%"
+          style="width: 60%"
           @keyup.enter="handleLogin"
         >
           <template #prefix><svg-icon icon-class="validCode" class="el-input__icon input-icon" /></template>
@@ -198,7 +198,6 @@ getCookie();
   float: right;
   img {
     cursor: pointer;
-    vertical-align: middle;
   }
 }
 .el-login-footer {
