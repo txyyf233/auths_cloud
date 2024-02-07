@@ -157,7 +157,7 @@ getCookie();
 <style lang='scss' scoped>
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   height: 100%;
   background-image: url("../assets/images/login-background.jpg");
@@ -172,7 +172,8 @@ getCookie();
 .login-form {
   border-radius: 6px;
   background: #ffffff;
-  width: 400px;
+  width: 350px;
+  margin: auto 100px;
   padding: 25px 25px 5px 25px;
   .el-input {
     height: 40px;
